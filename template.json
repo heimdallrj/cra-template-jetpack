@@ -1,11 +1,31 @@
 {
   "package": {
+    "scripts": {
+      "format": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'"
+    },
     "dependencies": {
-      "react-jetpack": "^1.0.0-alpha.2",
+      "@reduxjs/toolkit": "^1.6.1",
+      "axios": "^0.21.1",
+      "react-redux": "^7.2.4",
+      "redux": "^4.1.0",
+      "styled-components": "^5.3.0",
+      "web-vitals": "^1.0.1"
+    },
+    "devDependencies": {
       "@testing-library/jest-dom": "^5.11.4",
       "@testing-library/react": "^11.1.0",
       "@testing-library/user-event": "^12.1.10",
-      "web-vitals": "^1.0.1"
+      "husky": "^7.0.1",
+      "lint-staged": "^11.0.1",
+      "prettier": "^2.3.2"
+    },
+    "lint-staged": {
+      "src/**/*.{js,jsx,json,css,scss,md}": ["prettier --write"]
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
     },
     "eslintConfig": {
       "extends": ["react-app", "react-app/jest"]
